@@ -19,7 +19,7 @@ class LayoutScreen extends StatelessWidget {
             title: Text('News App'),
             actions: [
               IconButton(onPressed: () {
-                NavigateTo(context:context,widget:SearchScreen());
+                NavigateTo(context,SearchScreen());
               }, icon: const Icon(Icons.search_rounded)),
               IconButton(onPressed: () {
                 cubit.changeAppMode();
