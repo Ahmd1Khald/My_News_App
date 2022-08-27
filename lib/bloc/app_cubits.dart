@@ -2,6 +2,7 @@ import 'package:bloc/bloc.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:mynewsapp/bloc/app_states.dart';
+import 'package:mynewsapp/network/local/cach_helper.dart';
 import 'package:mynewsapp/network/non_local/dio_helper.dart';
 import 'package:mynewsapp/screens/business_screen.dart';
 import 'package:mynewsapp/screens/science_screen.dart';
@@ -29,9 +30,20 @@ class AppCubit extends Cubit<AppStates> {
 
   bool isDark = false;
 
-  void changeAppMode() {
-    isDark = !isDark;
-    emit(AppChangeModeState());
+  void changeAppMode({bool? fromShared}) {
+    if(fromShared!=null)
+      {
+        isDark = fromShared;
+        emit(AppChangeModeState());
+      }
+    else
+      {
+        isDark = !isDark;
+        CacheHelper.putBoolean(key: 'isDark', value:isDark).then((value) {
+          emit(AppChangeModeState());
+        });
+      }
+
   }
 
   List business = [];

@@ -27,7 +27,7 @@ Widget ItemBuilder(list,context)=>InkWell(
   
             image: DecorationImage(
   
-              image:NetworkImage('${list['urlToImage']}'),
+              image:list['urlToImage']!=null?NetworkImage('${list['urlToImage']}'):NetworkImage('https://as1.ftcdn.net/v2/jpg/02/48/42/64/1000_F_248426448_NVKLywWqArG2ADUxDq6QprtIzsF82dMF.jpg'),
   
               fit: BoxFit.cover,
   

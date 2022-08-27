@@ -16,7 +16,7 @@ class LayoutScreen extends StatelessWidget {
         AppCubit cubit = AppCubit.get(context);
         return Scaffold(
           appBar: AppBar(
-            title: Text('News App'),
+            title: const Text('News App'),
             actions: [
               IconButton(onPressed: () {
                 NavigateTo(context,SearchScreen());
