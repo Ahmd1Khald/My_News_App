@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:hexcolor/hexcolor.dart';
 import 'package:mynewsapp/bloc/app_cubits.dart';
 import 'package:mynewsapp/bloc/app_states.dart';
 import 'package:mynewsapp/network/non_local/dio_helper.dart';
